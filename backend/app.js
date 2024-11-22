@@ -1,9 +1,10 @@
 const express = require("express");
 
 const app = express();
+app.use(express.json());
 const userRouter = require("./routes/user");
 
-app.use("/api", userRouter);
+app.use("/api/user", userRouter);
 
 app.get("/about", (req, res) => {
   res.send("<h1>Hello I am from your backend about</h1>");
